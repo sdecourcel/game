@@ -1,0 +1,116 @@
+.wrapper {
+
+// background-color: #f6f7f8;
+}
+
+.show-layout {
+  display: grid;
+  grid-template-columns:70% repeat(3, 10%);
+  grid-template-rows: 40% 30% 30%;
+  grid-gap: 5px;
+  justify-items: stretch;
+}
+
+.testgrid1 {
+  grid-row: 1 / span 1;
+}
+
+.testgrid2 {
+  grid-row: 1 / span 1;
+  grid-column-start: span 3;
+  grid-column-end:  span 3;
+  background: white;
+}
+
+.testgrid3 {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
+  background: #FAFBFB;
+  padding-left: 15px;
+}
+.testgrid4 {
+  grid-row: 3 / span 1;
+  background: yellow;
+}
+
+.testgrid5 {
+
+  grid-row: 2 / span 1;
+  grid-column-start: span 2;
+  grid-column-end: span 2;
+  background: aqua;
+
+}
+.container_show {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 48px;
+  margin-left: 48px;
+  margin-bottom: 25px;
+  position: relative;
+
+}
+.content_show {
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+
+
+}
+
+.banner_head {
+height: 150px;
+margin: 0px;
+}
+
+.eventgame {
+position: absolute;
+// top: 10px;
+left: 0px;
+width: 60%;
+background-color: #4BC7CF;
+text-align: center;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+
+}
+
+.eventgame p {
+color: white;
+margin-top: 0px;
+margin-bottom: 0px;
+font-size: 24px;
+letter-spacing: 1,9px;
+
+}
+
+.organiser {
+position: absolute;
+top: 20px;
+right: 15px;
+
+}
+.organiser p {
+  padding-top: 15px;
+}
+
+
+.date {
+margin-left: 10px;
+
+}
+
+.eventdescription {
+
+
+}
+
+.eventparticipation {
+
+}
+
+.google_map {
+// margin-top: 20px;
+padding: 7%;
+// max-height: 100%;
+// max-width: 100%;
+}

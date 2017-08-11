@@ -7,20 +7,25 @@
   width: 40%;
   height: 100%;
   flex: 1 0 auto;
+  padding-top: 12px;
 }
 
 .tabs a {
-  color: black;
+  color: white;
   // margin-top: 37px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   // background-color: green;
 
 }
+
+.tabs p {
+  margin: 0 0 16px;
+
+}
 .tabs a:hover {
-  color: black;
+  color: white;
   cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
 
 }
 
@@ -30,7 +35,7 @@
 }
 .tab.active {
   border-bottom: 2px solid !important;
-  opacity: 0.8;
+
 }
 
 .tab:hover {

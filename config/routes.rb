@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+mount Attachinary::Engine => "/attachinary"
 
   get 'contact', to: "pages#contact"
   get 'about', to: "pages#about"

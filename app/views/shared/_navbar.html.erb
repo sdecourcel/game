@@ -1,25 +1,29 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/lewagon.png" />
+<!--
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
+  <!--   <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a> -->
+
+    <%= link_to events_path(@event) do %>
+    <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+    <% end %>
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
+    <%= link_to "Manage my events", myevents_events_path(@event), class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Notification link-->
     <a href="" class="navbar-wagon-item navbar-wagon-link">
@@ -32,17 +36,27 @@
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="http://placehold.it/50x50" class="avatar-large dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      <% if user_signed_in? %>
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+     <!--    <img src="http://placehold.it/50x50" class="avatar-large dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to "Manage my events", myevents_events_path(@event)%></li>
+          <li><%= link_to('Logout', destroy_user_session_path, method: :delete)%></li>
         </ul>
+        <% else %>
+         <% avatar_url = "http://placehold.it/30x30" %>
+         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to('Login', new_user_session_path)  %></li>
+          </ul>
+        <% end %>
       </div>
     </div>
 
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post stuff</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Create event</a>
   </div>
 
   <!-- Dropdown appearing on mobile only -->

@@ -10,6 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "attachinary/orm/active_record"
 require 'simple-form-datepicker'
 # require "rails/test_unit/railtie"
 
@@ -22,5 +23,6 @@ module Game
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
   end
 end

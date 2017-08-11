@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-ruby '2.3.3'
+ruby '2.4.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -42,6 +42,11 @@ gem 'simple-form-datepicker', '~> 0.1.3'
 gem "geocoder"
 gem "gmaps4rails"
 gem 'figaro'
+
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'scrollbar-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'

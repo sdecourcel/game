@@ -6,33 +6,32 @@ text-align: center;
 
 
 .navbar_myevents {
- font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  position: fixed;
+  top: 60px;
+  z-index: 11 !important;
+  background-color: #4BC7CF;
+  margin-bottom: 15px;
+  width: 100%;
+  box-shadow: 0 7px 4px -2px rgba(0, 0, 0, 0.2);
+  height: 50px !important;
+ // margin-top: -15px;
+//   height: 105px !important;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
 //   height: 165px;
 //   // background: #ffffff !important;
 //   position: fixed !important;
 //   top: 0px !important;
 //   width: 100% !important;
-    position: fixed;
-    top: 80px;
-    z-index: 11 !important;
-    background-color: white;
-    // margin-top: -15px;
-    margin-bottom: 15px;
-    width: 100%;
-    border-bottom-color: black;
-
-//   height: 105px !important;
-
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-
 }
 
 .result-myevents {
 // background-color:#f6f7f8;
 max-width: 750px;
-
+padding-top: 15px;
+text-align: center;
 
 }
 
@@ -40,6 +39,7 @@ max-width: 750px;
 width: 50%;
 display: flex;
 align-items: center;
+height: 100%;
 }
 
 .right_side_myevents {

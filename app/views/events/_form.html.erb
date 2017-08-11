@@ -1,0 +1,73 @@
+
+
+<div class=container>
+  <%= simple_form_for(@event) do |f|  %>
+    <div class="form-inputs">
+      <div class="col-xs-8">
+
+        <div class="game">
+          <div class="row">
+              <div class="col-xs-12 text-left">
+                <h3>Which game?</h3>
+                <%= f.input :game, required: true, label: false %>
+            </div>
+          </div>
+        </div>
+
+        <div class="title">
+          <div class="row">
+            <div class="col-xs-12 text-left">
+              <h3>Title?</h3>
+              <%= f.input :title, input_html: { maxlength: 50 }, required: true, label: false %>
+            </div>
+          </div>
+        </div>
+
+        <div class="description">
+          <div class="row">
+            <div class="col-xs-12 text-left">
+              <h3>Description of the event?</h3>
+              <%= f.input :description, as: :text, label: false %>
+            </div>
+          </div>
+        </div>
+
+        <div class="when">
+          <div class="row">
+            <div class="col-xs-12 text-left">
+              <h3>When ?</h3>
+              <%= f.input :happen_at, required: true, label: false %>
+            </div>
+          </div>
+        </div>
+
+      <div class="address">
+          <div class="row">
+            <div class="col-xs-12 text-left">
+              <h3>Type your address</h3>
+              <%= f.input :address,label: false, input_html: {class: 'user_input_autocomplete_address'}, required: true %>
+            </div>
+          </div>
+      </div>
+
+      <div class="address">
+        <div class="row">
+          <div class="col-xs-12 text-left">
+            <%= f.button :submit %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-4">
+    <h3>Upload photos!</h3><p> (Max 4)</p>
+      <%= f.input :photos, as: :attachinary, label: false %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+
+
+
+

@@ -1,55 +1,17 @@
-.form_style {
-
-    height: 34px;
-    font-size: 14px;
-    line-height: 1.42857;
-    color: rgb(85, 85, 85);
-    background-color: rgb(255, 255, 255);
-    background-image: none;
-    box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px inset;
-    padding: 6px 12px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(204, 204, 204);
-    border-image: initial;
-    border-radius: 4px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    font-family: inherit;
-}
-
-user_input_autocomplete_address {
-    height: 34px;
-    font-size: 14px;
-    line-height: 1.42857;
-    color: rgb(85, 85, 85);
-    background-color: rgb(255, 255, 255);
-    background-image: none;
-    box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px inset;
-    padding: 6px 12px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(204, 204, 204);
-    border-image: initial;
-    border-radius: 4px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    font-family: inherit;
-}
-
 .container_search_bar {
-  height: 150px;
   padding: 15px;
-  background: #ffffff !important;
+  background:  #4BC7CF !important;
   position: fixed !important;
-  top: 0px !important;
+  top: 60px !important;
   width: 100% !important;
   z-index: 10 !important;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1) !important;
-  height: 105px !important;
+  height: 50px !important;
   margin-bottom: 15px;
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   align-items: center;
-
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 7px 4px -2px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -57,26 +19,86 @@ user_input_autocomplete_address {
 margin-right: 10px;
 
 }
+.search_bar{
+  margin-left: 60px;
+}
 
-.search-result {
-margin-left: 15px;
+//mise en forme du simpleform.
+  #style {
+      height: 34px;
+      font-size: 14px;
+      line-height: 1.42857;
+      color: rgb(85, 85, 85);
+      background-color: rgb(255, 255, 255);
+      background-image: none;
+      box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px inset;
+      padding: 6px 12px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(204, 204, 204);
+      border-image: initial;
+      border-radius: 50px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      font-family: inherit;
+      }
+
+  .form_style {
+    font-family: 'Raleway', sans-serif;
+    height: 34px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: rgb(85, 85, 85);
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px inset;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: 50px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-family: inherit;
+    }
+
+// user_input_autocomplete_address {
+//     height: 34px;
+//     font-size: 14px;
+//     line-height: 1.42857;
+//     color: rgb(85, 85, 85);
+//     background-color: red;
+//     background-image: none;
+//     box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px inset;
+//     padding: 6px 12px;
+//     border-width: 1px;
+//     border-style: solid;
+//     border-color: rgb(204, 204, 204);
+//     border-image: initial;
+//     border-radius: 50px;
+//     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//     font-family: inherit;
+// }
+
+
+.card-result-layout {
+  max-width: 850px;
+padding-top: 10px;
 text-align: center;
 }
 
-.search-result h1 {
-
+.card-result-layout h1 {
 font-family: 'Raleway', sans-serif;
 }
 
-
-.search-result-card {
-overflow:scroll;
-
-}
-
-.search-result-location {
-  margin-top: 20px;
-
+.map-result-layout {
+    display: block;
+    position: fixed;
+    width: calc(100% - 850px);
+    height: calc(100% - 50px);
+    top: 110px;
+    right: 0;
+    background-color: #f6f7f8;
+    border-left: 1px solid #CCC;
 }
 
 

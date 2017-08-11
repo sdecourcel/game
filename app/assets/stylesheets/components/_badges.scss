@@ -1,11 +1,9 @@
-.badge-container {
+.badg-container {
   position: relative;
-  font-size: 25px;
-  line-height: 30px;
-  width: 30px;
-  color: grey;
+text-overflow: ellipsis;
 }
-.badge {
+
+.badg {
   position: absolute;
   top: -5px;
   right: -5px;
@@ -20,19 +18,32 @@
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
-.badge-red {
+
+.badg-red {
   background: #EE5F5B;
 }
-.badge-green {
+
+.badg-green {
   background: #32B796;
 }
-.badge-blue {
+
+.badg-blue {
   background: #469AE0;
 }
-.badge-black {
+
+.badg-black {
   background: black;
 }
-.badge-bordered {
+
+.badg-bordered {
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+.badg-container-show {
+  position: relative;
+  line-height: 30px;
+  width: 30px;
+}
+
+

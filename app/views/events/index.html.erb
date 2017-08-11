@@ -1,100 +1,60 @@
-
-<div class="container_search_bar">
-  <div class="logo">
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-    <% end %>
-  </div>
-  <div class="search_bar">
-    <%= simple_form_for :search, url: events_path, method: :get, html: { class: 'form-inline' } do |f| %>
-    <%= f.input :address, label: false, input_html: {class: 'user_input_autocomplete_address'}, placeholder: "Enter your address" %>
-    <%= f.input_field :game, required: false, label: false, selected: @game, placeholder: 'Choose a game', class: 'form_style'  %>
-    <%= f.input_field :date, id: 'mydatepicker', value: @happen_at, required: false, label: false, placeholder: 'Select a date', class: 'form_style' %>
-    <%= f.submit "Find", :class => "btn btn" %>
-    <%end%>
-  </div>
-
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <% if user_signed_in? %>
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-      <% end %>
-      <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
+<div class="wrapper">
+  <div class="container_search_bar">
+    <div class="search_bar">
+      <%= simple_form_for :search, url: events_path, method: :get, html: { class: 'form-inline' } do |f| %>
+      <%= f.input :address, label: false, input_html: {class: 'user_input_autocomplete_address', id: 'style'}, placeholder: "Enter your address" %>
+      <%= f.input_field :game, required: false, label: false, selected: @game, placeholder: 'Choose a game', class: 'form_style'  %>
+      <%= f.input_field :date, id: 'mydatepicker', value: @happen_at, required: false, label: false, placeholder: 'Select a date', class: 'form_style' %>
+      <%= f.submit "Find", :class => "btn btn" %>
+      <%end%>
+    </div>
   </div>
 </div>
-
-<div class="search-result">
-  <div class="row">
-    <div class="search-result-card col-md-7">
-      <h4>Event's nearby!</h4>
-      <% @events.each do |event| %>
-        <div class="col-xs-12 col-md-6">
-          <div class="card ">
-            <div class="card-category">
-              <p><%= event.happen_at.strftime("%A %v") %></p>
-            </div>
-            <div class="card-user">
+<div class="wrapper">
+  <div class="card-result-layout">
+    <% @events.each do |event| %>
+      <div class="col-xs-12 col-md-6">
+        <div class="card">
+          <div class="card-category">
+            <p><%= event.happen_at.strftime("%A %v") %></p>
+          </div>
+          <div class="card-user">
+          <%= image_tag event.user.facebook_picture_url, class: "avatar-large" %>
+            <div class="name">
               <%= event.user.firstname %>
             </div>
-            <div class="card-description">
-             <h2><%= event.game.capitalize %></h2>
-             <p><%= event.address %></p>
-            </div>
-             <%= link_to "", event_path(event), class: "card-link" %>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="search-result-location col-md-5">
-      <div class="google-map" >
-        <div id="map" style="width: 100%; height: 900px;">
-          <% content_for(:after_js) do %>
-            <%= javascript_tag do %>
-              $(document).ready(function() {
-                var handler = Gmaps.build('Google');
-                handler.buildMap({ internal: { id: 'map' } }, function() {
-                  markers = handler.addMarkers(<%= raw @hash.to_json %>);
-                  handler.bounds.extendWith(markers);
-                  handler.fitMapToBounds();
-                  if (markers.length == 0) {
-                    handler.getMap().setZoom(12);
-                  } else if (markers.length == 1) {
-                    handler.getMap().setZoom(12);
-                  }
-                });
-              });
-            <% end %>
-          <% end %>
+          <div class="card-description">
+           <p><%= event.game.capitalize %></p>
+          </div>
+           <div class="card-address">
+           <p><%= event.address %></p>
+          </div>
+           <%= link_to "", event_path(event), class: "card-link" %>
         </div>
       </div>
+    <% end %>
+  </div>
+  <div class="map-result-layout">
+    <div id="map" style="width: 100%; height: 90%;">
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).ready(function() {
+            var handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function() {
+              markers = handler.addMarkers(<%= raw @hash.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+              if (markers.length == 0) {
+                handler.getMap().setZoom(12);
+              } else if (markers.length == 1) {
+                handler.getMap().setZoom(12);
+              }
+            });
+          });
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
-
 
