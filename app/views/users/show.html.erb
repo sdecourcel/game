@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="user-show-layout text-center">
+      <p><%= @user.firstname %></p>
+      <p><%= @user.email %></p>
+      <p><%=@user.created_at %></p>
+      <p><%=@user.address %></p>
+      <p><%=@user.age%></p>
+      <p><%=@user.gender%></p>
+      <p><%= cl_image_tag @user.facebook_picture_url, class: "avatar-xl"%></p>
+    </div>
+  </div>
+</div>

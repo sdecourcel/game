@@ -41,15 +41,7 @@
   background: aqua;
 
 }
-.container_show {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: 48px;
-  margin-left: 48px;
-  margin-bottom: 25px;
-  position: relative;
 
-}
 .content_show {
   font-family: 'Raleway', sans-serif;
   background-color: white;
@@ -113,4 +105,14 @@ margin-left: 10px;
 padding: 7%;
 // max-height: 100%;
 // max-width: 100%;
+}
+
+.scrollmenu {
+
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+.scrollmenu .item {
+display: inline-block;
 }

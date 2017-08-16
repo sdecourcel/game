@@ -19,7 +19,7 @@ $.datepicker.regional['fr'] = {clearText: 'Effacer', clearStatus: '',
 
 
 $("#mydatepicker").datepicker({
-dateFormat: "dd-mm-yy",
+dateFormat: "dd-mm-yy"
 
 
 } );

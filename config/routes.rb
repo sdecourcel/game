@@ -15,4 +15,6 @@ root to: "pages#home"
     resources :participations, only: [:update, :create]
     end
   end
+
+resources :users, only: [:show]
 end
